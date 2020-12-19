@@ -1,0 +1,58 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color:#262626;
+  z-index: 999;
+  opacity: .8;
+}
+
+.header-wrap {
+  margin: 0 auto;
+  width: 1100px;
+}
+
+.header__userbar {
+  padding: 0 10px;
+}
+
+.header__userbar-list {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header__userbar-btn {
+  padding: 3px 5px;
+}
+
+.header__userbar-link {
+  color: white;
+  font-weight: 600;
+}
+
+.header__menubar {
+  padding: 15px 10px;
+}
+
+.header__menubar-list {
+  display: flex;
+  justify-content:space-evenly ;
+}
+
+.header__menubar-btn {
+  padding: 5px;
+}
+
+.header__menubar-link {
+  color: white;
+  font-weight: 600;
+}
+
+.header__userbar-link:hover,
+.header__menubar-link:hover {
+  color: #25a5f0;
+}
+.footInfos > dl > dd > p {
+    font-size: 17px;
+    padding: 5px;
+}
