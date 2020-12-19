@@ -432,10 +432,10 @@ public class myPageDaoImpl implements myPageDao {
 		sql += "SELECT * FROM (";
 		sql += "	SELECT rownum rnum, B.* FROM (";  //게시글번호가 아니라 rownum을 붙이는 이유는 중간에 만약에 게시글이 중간에 삭제 된 상태에서 조회를하면 그부분이 비어보인다.
 		sql += "		SELECT";
-		sql += "			board_no, title, writer_id, board_cate";
-		sql += "			, content, hit, writter_date";
-		sql += "		FROM board WHERE writer_id=?";
-		sql += "		ORDER BY TO_NUMBER(board_no) DESC"; //숫자형으로 변환한 뒤 역순으로 출력, 게시글 번호가 큰게 최근의 게시글이니까
+		sql += "			boardno, title, user_id, board_cate";
+		sql += "			, content, hit, writer_date";
+		sql += "		FROM board WHERE user_id=?";
+		sql += "		ORDER BY TO_NUMBER(boardno) DESC"; //숫자형으로 변환한 뒤 역순으로 출력, 게시글 번호가 큰게 최근의 게시글이니까
 		sql += "	) B";
 		sql += " ) BOARD";
 		sql += " WHERE rnum BETWEEN ? AND ?"; // rownum을 기준으로 조회한다.
@@ -457,9 +457,9 @@ public class myPageDaoImpl implements myPageDao {
 //				System.out.println("here");
 				Board b = new Board(); //결과값 저장 객체
 				//결과값 한 행 처리
-				b.setBoardno( rs.getString("board_no") );
+				b.setBoardno( rs.getString("boardno") );
 				b.setTitle( rs.getString("title") );
-				b.setUser_id( rs.getString("writer_id") );
+				b.setUser_id( rs.getString("user_id") );
 				b.setContent( rs.getString("content") );
 				b.setHit( rs.getInt("hit") );
 				b.setWrittendate( rs.getDate("writer_date") );

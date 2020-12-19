@@ -74,17 +74,23 @@
 }
 #FirstDatePick{
 	position: absolute;
-    margin: 5px 0 0 -120px;
+	margin: 2px 0 0 -55px;
 }
 #SecondDatePick{
 	position: absolute;
-    margin: 5px 0 0 -220px;
+    margin: 2px 0 0 -220px;
 }
 .calendarWrap{
     margin: -38px 212px 0 1597px;
     position: absolute;
     width: 230px;
  }
+ 
+ 
+ 
+ margin: 4px 0 0 22px;
+ 
+ 
 </style>
 <script type="text/javascript">
 $(document).ready(function(){

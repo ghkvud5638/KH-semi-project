@@ -92,7 +92,7 @@ public class BoardDaoImpl implements BoardDao {
 		sql += "	SELECT rownum rnum, B.* FROM (";  //게시글번호가 아니라 rownum을 붙이는 이유는 중간에 만약에 게시글이 중간에 삭제 된 상태에서 조회를하면 그부분이 비어보인다.
 		sql += "		SELECT";
 		sql += "			boardno, title, user_id";
-		sql += "			, content, hit, writtendate, board_cate";
+		sql += "			, content, hit, writer_date, board_cate";
 		sql += "		FROM board WHERE board_cate=?";
 		sql += "		ORDER BY TO_NUMBER(boardno) DESC";
 		sql += "	) B";
@@ -122,7 +122,7 @@ public class BoardDaoImpl implements BoardDao {
 				b.setUser_id( rs.getString("user_id") );
 				b.setContent( rs.getString("content") );
 				b.setHit( rs.getInt("hit") );
-				b.setWrittendate( rs.getDate("writtendate") );
+				b.setWrittendate( rs.getDate("writer_date") );
 				b.setBoardCate( rs.getString("board_cate"));
 				//리스트에 결과값 저장
 				boardList.add(b);
@@ -157,7 +157,7 @@ public class BoardDaoImpl implements BoardDao {
 				detail.setContent(rs.getString("CONTENT"));
 				detail.setHit(rs.getInt("HIT"));
 				detail.setBoardCate(rs.getString("BOARD_CATE"));
-				detail.setWrittendate(rs.getDate("WRITTENDATE"));
+				detail.setWrittendate(rs.getDate("WRITER_DATE"));
 				detail.setUser_id(rs.getString("USER_ID"));
 				detail.setBoardno(rs.getString("BOARDNO"));
 				detail.setVid_url(rs.getString("VID_URL"));
